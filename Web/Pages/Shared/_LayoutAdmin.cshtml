@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="">
-    <meta name="author" content="SkillTree.my">
-    <title>@ViewData["Title"] - SkillTreeRazorPageBlogSample</title>
+    <title>@ViewData["Title"] - RazorPageBlogSample</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -45,17 +44,8 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 @RenderBody()
-            </div>
-            <div class="col-md-4">
-                <div class="card my-4">
-                    <h5 class="card-header">Side Widget</h5>
-                    <div class="card-body">
-                        You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
