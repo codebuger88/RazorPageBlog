@@ -1,25 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Web.Data;
+using Web.Data.Models;
 
 namespace Web.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly RazorPageBlogContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IList<Article> Articles { get; set; }
+
+        public IndexModel(RazorPageBlogContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            Articles = await _context.Article.ToListAsync();
         }
     }
 }
